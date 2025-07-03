@@ -3,7 +3,7 @@ title: "Atomic Habits"
 author: "James Clear"
 category: "Productivity"
 description: "An easy & proven way to build good habits & break bad ones."
-pdfUrl: "https://t.me/YOUR_CHANNEL/0"
+pdfUrl: "https://t.me/abyssinialibrary/655"
 ---
 > **The quality of our lives depends on the quality of our habits. Success is the product of daily habits—not once-in-a-lifetime transformations.**
 
