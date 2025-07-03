@@ -1,0 +1,41 @@
+---
+// src/layouts/MainLayout.astro
+import '../styles/global.css'; // Import our global styles
+import NavBar from '../components/NavBar.astro'; // Import the navigation bar
+
+// This allows us to pass a 'title' to each page.
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="AbyssiniaLibrary Book Summaries" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title} | AbyssiniaLibrary</title>
+	</head>
+	<body>
+    <!-- The navigation bar will appear on every page -->
+		<NavBar /> 
+    
+    <!-- The <slot /> is where the unique content of each page will be injected -->
+		<main>
+			<slot />
+		</main>
+	</body>
+</html>
+
+<style>
+  /* Add some padding and constrain the width for readability on large screens */
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+</style>

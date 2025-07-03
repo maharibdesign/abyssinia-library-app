@@ -1,0 +1,32 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const allSummaries = Object.values(import.meta.glob('./summaries/*.astro', { eager: true }));
+---
+
+<MainLayout title="All Summaries">
+  <h1 class="page-title">Book Summaries</h1>
+  
+  <div class="summary-grid">
+    {allSummaries.map((summary) => (
+      <a href={summary.url} class="summary-card">
+        <div class="card-content">
+          <h2 class="card-title">{summary.frontmatter.title}</h2>
+          <p class="card-author">by {summary.frontmatter.author}</p>
+          <span class="card-category">{summary.frontmatter.category}</span>
+        </div>
+      </a>
+    ))}
+  </div>
+</MainLayout>
+
+<style>
+  .page-title { border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem; margin-bottom: 2rem; }
+  .summary-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+  @media (min-width: 640px) { .summary-grid { grid-template-columns: repeat(2, 1fr); } }
+  .summary-card { display: block; background-color: var(--color-card-bg); border: 1px solid var(--color-border); border-radius: 6px; padding: 1.5rem; text-decoration: none; color: var(--color-text); transition: transform 0.2s ease, border-color 0.2s ease; }
+  .summary-card:hover { transform: translateY(-5px); border-color: var(--color-primary); }
+  .card-title { margin: 0 0 0.25rem 0; font-size: 1.25rem; }
+  .card-author { margin: 0 0 1rem 0; color: #8b949e; }
+  .card-category { font-size: 0.8rem; background-color: var(--color-border); color: #c9d1d9; padding: 4px 8px; border-radius: 20px; border: 1px solid #30363d; }
+</style>

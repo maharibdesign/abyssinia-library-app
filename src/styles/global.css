@@ -1,0 +1,37 @@
+/* src/styles/global.css */
+
+/* 
+  We define our colors as CSS variables for easy reuse.
+  We're using GitHub's Dark Theme colors.
+*/
+:root {
+  --color-bg: #0d1117;          /* Background */
+  --color-text: #e6edf3;         /* Main text */
+  --color-primary: #2f81f7;      /* Links and primary buttons */
+  --color-border: #30363d;       /* Borders and dividers */
+  --color-card-bg: #161b22;      /* Card background */
+  --font-family-sans: "Segoe UI",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif;
+}
+
+/* Basic resets and global styles */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family-sans);
+  margin: 0;
+  padding: 80px 0 20px 0; /* Add top padding to prevent content from hiding under the fixed nav bar */
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
