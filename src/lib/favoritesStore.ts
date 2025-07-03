@@ -1,26 +1,29 @@
 // src/lib/favoritesStore.ts
 import { persistentMap } from '@nanostores/persistent';
 
-// The store definition remains the same.
-export const favoriteSummaries = persistentMap<Record<string, boolean>>('favorites', {});
+// Use a prefix for the localStorage key to avoid conflicts and ensure it's unique.
+const storageKey = 'abyssinia_favorites:';
+
+// The persistentMap now correctly stores a Record where the value is the string '1'.
+// This satisfies the library's type constraints.
+export const favoriteSummaries = persistentMap<Record<string, '1'>>(storageKey, {});
 
 /**
  * Adds or removes a favorite summary.
- * This new version uses a more robust method to ensure UI components always update.
+ * This version stores the string "1" as the value to be compatible with string-only storage.
  */
 export function toggleFavorite(bookSlug: string) {
-  // First, get a mutable copy of the current favorites object.
+  // Get a mutable copy of the current favorites object.
   const currentFavorites = { ...favoriteSummaries.get() };
 
   if (currentFavorites[bookSlug]) {
-    // --- The book IS currently a favorite, so we REMOVE it. ---
+    // If the key exists, it's a favorite. REMOVE the key entirely.
     delete currentFavorites[bookSlug];
   } else {
-    // --- The book IS NOT a favorite, so we ADD it. ---
-    currentFavorites[bookSlug] = true;
+    // If the key doesn't exist, it's not a favorite. ADD it with the value "1".
+    currentFavorites[bookSlug] = '1';
   }
 
-  // Finally, set the entire store to our new, modified object.
-  // This guarantees that any listening components will be notified of the change.
+  // Set the entire store to our new, modified object. This guarantees updates.
   favoriteSummaries.set(currentFavorites);
 }
