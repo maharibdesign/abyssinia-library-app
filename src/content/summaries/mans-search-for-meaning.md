@@ -3,7 +3,7 @@ title: "Man's Search for Meaning"
 author: "Viktor E. Frankl"
 category: "Philosophy"
 description: "A psychiatrist's experience in concentration camps and his theory of Logotherapy."
-pdfUrl: "https://t.me/YOUR_CHANNEL/0"
+pdfUrl: "https://t.me/abyssinialibrary/562"
 ---
 > **Everything can be taken from a man but one thing: the last of the human freedoms—to choose one’s attitude in any given set of circumstances, to choose one’s own way.**
 

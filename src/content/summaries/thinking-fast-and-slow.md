@@ -3,7 +3,7 @@ title: "Thinking, Fast and Slow"
 author: "Daniel Kahneman"
 category: "Psychology"
 description: "An exploration of the two systems that drive the way we think."
-pdfUrl: "https://t.me/YOUR_CHANNEL/0"
+pdfUrl: "https://t.me/abyssinialibrary/480"
 ---
 > **Our mind is a machine for jumping to conclusions. We are often confident even when we are wrong, and an objective observer is more likely to detect our errors than we are.**
 

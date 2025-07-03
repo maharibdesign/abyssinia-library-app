@@ -3,7 +3,7 @@ title: "Zero to One"
 author: "Peter Thiel"
 category: "Business"
 description: "Notes on startups, or how to build the future."
-pdfUrl: "https://t.me/YOUR_CHANNEL/0"
+pdfUrl: "https://t.me/abyssinialibrary/790"
 ---
 > **Every moment in business happens only once. The next Bill Gates will not build an operating system. The next Larry Page or Sergey Brin won’t make a search engine. If you are copying these guys, you aren’t learning from them.**
 

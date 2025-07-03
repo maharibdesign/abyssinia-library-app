@@ -3,7 +3,7 @@ title: "The 7 Habits of Highly Effective People"
 author: "Stephen R. Covey"
 category: "Productivity"
 description: "A principle-centered approach for solving personal and professional problems."
-pdfUrl: "https://t.me/YOUR_CHANNEL/0"
+pdfUrl: "https://t.me/abyssinialibrary/150"
 ---
 > **Sow a thought, reap an action; sow an action, reap a habit; sow a habit, reap a character; sow a character, reap a destiny.**
 

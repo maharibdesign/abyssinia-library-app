@@ -3,7 +3,7 @@ title: "Meditations"
 author: "Marcus Aurelius"
 category: "Philosophy"
 description: "The private stoic reflections of a Roman emperor."
-pdfUrl: "https://t.me/YOUR_CHANNEL/0"
+pdfUrl: "https://t.me/abyssinialibrary/839"
 ---
 > **You have power over your mind - not outside events. Realize this, and you will find strength.**
 

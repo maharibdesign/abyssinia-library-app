@@ -3,7 +3,7 @@ title: "The Psychology of Money"
 author: "Morgan Housel"
 category: "Finance"
 description: "Timeless lessons on wealth, greed, and happiness."
-pdfUrl: "https://t.me/YOUR_CHANNEL/0"
+pdfUrl: "https://t.me/abyssinialibrary/796"
 ---
 > **Doing well with money has a little to do with how smart you are and a lot to do with how you behave.**
 

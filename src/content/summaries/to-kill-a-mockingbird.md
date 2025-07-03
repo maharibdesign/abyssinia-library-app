@@ -3,7 +3,7 @@ title: "To Kill a Mockingbird"
 author: "Harper Lee"
 category: "Novel"
 description: "A timeless novel about justice, innocence, and racial inequality in the American South."
-pdfUrl: "https://t.me/YOUR_CHANNEL/0"
+pdfUrl: "https://t.me/abyssinialibrary/27"
 ---
 > **You never really understand a person until you consider things from his point of view... until you climb into his skin and walk around in it.**
 

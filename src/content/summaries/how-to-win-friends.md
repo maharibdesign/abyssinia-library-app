@@ -3,7 +3,7 @@ title: "How to Win Friends and Influence People"
 author: "Dale Carnegie"
 category: "Self-Help"
 description: "A timeless guide to improving social skills and building relationships."
-pdfUrl: "https://t.me/YOUR_CHANNEL/0"
+pdfUrl: "https://t.me/abyssinialibrary/370"
 ---
 > **You can make more friends in two months by becoming interested in other people than you can in two years by trying to get other people interested in you.**
 

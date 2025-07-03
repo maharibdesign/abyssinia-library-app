@@ -3,7 +3,7 @@ title: "Influence: The Psychology of Persuasion"
 author: "Robert B. Cialdini"
 category: "Psychology"
 description: "An exploration of the six universal principles of influence."
-pdfUrl: "https://t.me/YOUR_CHANNEL/0"
+pdfUrl: "https://t.me/abyssinialibrary/308"
 ---
 > **A well-known principle of human behavior says that when we ask someone to do us a favor we will be more successful if we provide a reason. People simply like to have reasons for what they do.**
 

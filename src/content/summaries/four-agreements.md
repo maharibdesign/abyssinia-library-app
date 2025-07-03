@@ -3,7 +3,7 @@ title: "The Four Agreements"
 author: "Don Miguel Ruiz"
 category: "Spirituality"
 description: "A practical guide to personal freedom based on ancient Toltec wisdom."
-pdfUrl: "https://t.me/YOUR_CHANNEL/0"
+pdfUrl: "https://t.me/abyssinialibrary/64"
 ---
 > **The human mind is like a fertile ground where seeds are continually being planted. The seeds are opinions, ideas, and concepts. You plant a seed, a thought, and it grows. The word is like a seed.**
 

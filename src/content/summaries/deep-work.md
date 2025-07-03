@@ -3,7 +3,7 @@ title: "Deep Work"
 author: "Cal Newport"
 category: "Productivity"
 description: "Rules for focused success in a distracted world."
-pdfUrl: "https://t.me/YOUR_CHANNEL/0"
+pdfUrl: "https://t.me/abyssinialibrary/107"
 ---
 > **Deep work is the ability to focus without distraction on a cognitively demanding task. It's a skill that allows you to quickly master complicated information and produce better results in less time.**
 

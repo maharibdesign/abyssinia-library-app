@@ -3,7 +3,7 @@ title: "Sapiens: A Brief History of Humankind"
 author: "Yuval Noah Harari"
 category: "History"
 description: "A sweeping overview of human history, from the Stone Age to the present."
-pdfUrl: "https://t.me/YOUR_CHANNEL/0"
+pdfUrl: "https://t.me/abyssinialibrary/635"
 ---
 > **Biology enables, Culture forbids. Culture is a web of imagined realities, and these fictions are what make large-scale human cooperation possible.**
 

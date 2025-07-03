@@ -3,7 +3,7 @@ title: "The Lean Startup"
 author: "Eric Ries"
 category: "Business"
 description: "How today's entrepreneurs use continuous innovation to create successful businesses."
-pdfUrl: "https://t.me/YOUR_CHANNEL/0"
+pdfUrl: "https://t.me/abyssinialibrary/469"
 ---
 > **The only way to win is to learn faster than anyone else.**
 
