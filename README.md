@@ -1,47 +1,60 @@
-# Astro Starter Kit: Minimal
+# AbyssiniaLibrary Book Summary Mini App
 
-```sh
-npm create astro@latest -- --template minimal
-```
+This is a minimalistic, fast, and responsive web application for reading book summaries. It's built with modern tools and is designed to be easily maintainable.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+The live application is deployed on Vercel.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Features
 
-## 🚀 Project Structure
+- **Blazing Fast:** Built with Astro for a super-fast static site experience.
+- **Dynamic Content:** Summaries are written in Markdown and loaded automatically.
+- **Interactive UI:**
+  - Save your favorite summaries, remembered on your device.
+  - Live search by title or author.
+  - Filter summaries by category.
+- **Pro Features:**
+  - Reading progress bar on summary pages.
+  - "Random Summary" button for discovery.
+  - Web Share API integration (falls back to "copy link").
+- **Responsive Design:** Works beautifully on desktop and mobile.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Tech Stack
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- **Framework:** [Astro](https://astro.build/)
+- **UI Components:** [React](https://react.dev/) (for interactive elements)
+- **State Management:** [Nanostores](https://github.com/nanostores/nanostores)
+- **Styling:** Plain CSS with CSS Variables
+- **Deployment:** [Vercel](https://vercel.com/)
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## How to Run Locally
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/YOUR_USERNAME/abyssinia-library-app.git
+    cd abyssinia-library-app
+    ```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+3.  **Start the development server:**
+    ```bash
+    npm run dev
+    ```
+    The application will be available at `http://localhost:4321`.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## How to Add a New Book Summary
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+1.  Create a new Markdown file in the `src/content/summaries/` directory. The filename will become the URL slug (e.g., `new-book.md` becomes `/summaries/new-book`).
+2.  Add the required frontmatter to the top of the file:
+    ```markdown
+    ---
+    title: "New Book Title"
+    author: "Book Author"
+    category: "Category Name"
+    description: "A short, one-sentence description of the book."
+    ---
+    
+    Your full summary content, written in Markdown, goes here...
+    ```
+3.  That's it! The new summary will automatically appear on the homepage.

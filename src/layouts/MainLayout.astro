@@ -1,14 +1,15 @@
 ---
 // src/layouts/MainLayout.astro
-import '../styles/global.css'; // Import our global styles
-import NavBar from '../components/NavBar.astro'; // Import the navigation bar
+import '../styles/global.css';
+import NavBar from '../components/NavBar.astro';
 
-// This allows us to pass a 'title' to each page.
 interface Props {
 	title: string;
+  // This new prop tells the layout if it's a summary page
+  isSummaryPage?: boolean;
 }
 
-const { title } = Astro.props;
+const { title, isSummaryPage = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -21,21 +22,48 @@ const { title } = Astro.props;
 		<title>{title} | AbyssiniaLibrary</title>
 	</head>
 	<body>
-    <!-- The navigation bar will appear on every page -->
-		<NavBar /> 
+    <!-- The reading progress bar, only visible on summary pages -->
+    {isSummaryPage && <div id="progress-bar"></div>}
+
+		<NavBar />
     
-    <!-- The <slot /> is where the unique content of each page will be injected -->
 		<main>
-			<slot />
+			<slot /> <!-- Page content goes here -->
+
+      <!-- The share button will only be rendered if the slot is used -->
+      <slot name="after-content" />
 		</main>
+
+    <script define:vars={{ isSummaryPage }}>
+      // This script only runs if we are on a summary page
+      if (isSummaryPage) {
+        const progressBar = document.getElementById('progress-bar');
+        
+        window.addEventListener('scroll', () => {
+          const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const progress = (window.scrollY / totalHeight) * 100;
+          progressBar.style.width = `${progress}%`;
+        });
+      }
+    </script>
 	</body>
 </html>
 
 <style>
-  /* Add some padding and constrain the width for readability on large screens */
   main {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 1rem;
+  }
+  /* Style for the progress bar */
+  #progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background-color: var(--color-primary);
+    width: 0%;
+    z-index: 20; /* Ensure it's on top of everything */
+    transition: width 0.1s linear;
   }
 </style>

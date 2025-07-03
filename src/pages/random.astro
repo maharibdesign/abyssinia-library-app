@@ -1,0 +1,15 @@
+---
+// src/pages/random.astro
+import { getCollection } from "astro:content";
+
+// Get all summaries
+const allSummaries = await getCollection("summaries");
+
+// Pick a random one
+const randomIndex = Math.floor(Math.random() * allSummaries.length);
+const randomSummary = allSummaries[randomIndex];
+
+// Redirect the user to the random summary's URL
+return Astro.redirect(`/summaries/${randomSummary.slug}`);
+---
+<!-- This page will never be seen by the user -->

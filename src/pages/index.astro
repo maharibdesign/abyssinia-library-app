@@ -1,32 +1,155 @@
 ---
+// src/pages/index.astro
 import MainLayout from '../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+import FavoriteButton from '../components/FavoriteButton.tsx';
 
-const allSummaries = Object.values(import.meta.glob('./summaries/*.astro', { eager: true }));
+const allSummaries = await getCollection('summaries');
+
+const categories = ['All', ...new Set(allSummaries.map(summary => summary.data.category))];
 ---
 
 <MainLayout title="All Summaries">
   <h1 class="page-title">Book Summaries</h1>
   
-  <div class="summary-grid">
-    {allSummaries.map((summary) => (
-      <a href={summary.url} class="summary-card">
-        <div class="card-content">
-          <h2 class="card-title">{summary.frontmatter.title}</h2>
-          <p class="card-author">by {summary.frontmatter.author}</p>
-          <span class="card-category">{summary.frontmatter.category}</span>
-        </div>
-      </a>
-    ))}
+  <div id="filter-controls" class="filter-controls">
+    <div class="search-wrapper">
+      <input type="search" id="search-input" placeholder="Search by title or author..." />
+    </div>
+    <div id="category-filters" class="category-filters">
+      {categories.map(category => (
+        <button class="category-btn" data-category={category}>{category}</button>
+      ))}
+    </div>
+  </div>
+
+  <div id="summaries-container">
+    <div class="summary-grid">
+      {allSummaries.map((summary) => (
+        <a 
+          href={`/summaries/${summary.slug}`} 
+          class="summary-card"
+          data-title={summary.data.title.toLowerCase()}
+          data-author={summary.data.author.toLowerCase()}
+          data-category={summary.data.category}
+        >
+          <FavoriteButton bookSlug={summary.slug} client:load />
+          
+          <div class="card-content">
+            <h2 class="card-title">{summary.data.title}</h2>
+            <p class="card-author">by {summary.data.author}</p>
+            <p class="card-description">{summary.data.description}</p>
+            <span class="card-category">{summary.data.category}</span>
+          </div>
+        </a>
+      ))}
+    </div>
   </div>
 </MainLayout>
 
+<script>
+  const searchInput = document.getElementById('search-input') as HTMLInputElement;
+  const categoryContainer = document.getElementById('category-filters');
+  const allCards = document.querySelectorAll('.summary-card') as NodeListOf<HTMLElement>;
+  
+  let currentCategory = 'All';
+  let currentSearchTerm = '';
+
+  function filterCards() {
+    allCards.forEach(card => {
+      const title = card.dataset.title || '';
+      const author = card.dataset.author || '';
+      const category = card.dataset.category || '';
+
+      const matchesCategory = currentCategory === 'All' || category === currentCategory;
+      const matchesSearch = title.includes(currentSearchTerm) || author.includes(currentSearchTerm);
+
+      if (matchesCategory && matchesSearch) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  searchInput.addEventListener('input', () => {
+    currentSearchTerm = searchInput.value.toLowerCase();
+    filterCards();
+  });
+
+  categoryContainer.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    if (target.matches('.category-btn')) {
+      document.querySelector('.category-btn.active')?.classList.remove('active');
+      target.classList.add('active');
+      
+      currentCategory = target.dataset.category || 'All';
+      filterCards();
+    }
+  });
+
+  document.querySelector('.category-btn[data-category="All"]').classList.add('active');
+</script>
+
+
 <style>
-  .page-title { border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem; margin-bottom: 2rem; }
-  .summary-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
-  @media (min-width: 640px) { .summary-grid { grid-template-columns: repeat(2, 1fr); } }
-  .summary-card { display: block; background-color: var(--color-card-bg); border: 1px solid var(--color-border); border-radius: 6px; padding: 1.5rem; text-decoration: none; color: var(--color-text); transition: transform 0.2s ease, border-color 0.2s ease; }
-  .summary-card:hover { transform: translateY(-5px); border-color: var(--color-primary); }
-  .card-title { margin: 0 0 0.25rem 0; font-size: 1.25rem; }
-  .card-author { margin: 0 0 1rem 0; color: #8b949e; }
-  .card-category { font-size: 0.8rem; background-color: var(--color-border); color: #c9d1d9; padding: 4px 8px; border-radius: 20px; border: 1px solid #30363d; }
+  .summary-card {
+    position: relative; 
+    display: block; 
+    background-color: var(--color-card-bg); 
+    border: 1px solid var(--color-border); 
+    border-radius: 6px; 
+    padding: 1.5rem; 
+    text-decoration: none; 
+    color: var(--color-text); 
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-description {
+    font-size: 0.9rem;
+    color: #8b949e;
+    flex-grow: 1;
+  }
+  .page-title { 
+    border-bottom: 1px solid var(--color-border); 
+    padding-bottom: 0.5rem; 
+    margin-bottom: 2rem; 
+  }
+  .summary-grid { 
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 1.5rem; 
+  }
+  @media (min-width: 640px) { 
+    .summary-grid { 
+      grid-template-columns: repeat(2, 1fr); 
+    } 
+  }
+  .summary-card:hover { 
+    transform: translateY(-5px); 
+    border-color: var(--color-primary); 
+  }
+  .card-title { 
+    margin: 0 0 0.25rem 0; 
+    font-size: 1.25rem; 
+  }
+  .card-author { 
+    margin: 0 0 1rem 0; 
+    color: #8b949e; 
+  }
+  .card-category { 
+    font-size: 0.8rem; 
+    background-color: var(--color-border); 
+    color: #c9d1d9; 
+    padding: 4px 8px; 
+    border-radius: 20px; 
+    border: 1px solid #30363d; 
+    align-self: flex-start; 
+  }
 </style>

@@ -3,17 +3,18 @@
 ---
 <header>
   <nav>
-    <!-- These links will be made functional in later steps -->
     <a href="javascript:history.back()" class="nav-button">Back</a>
     <a href="/" class="nav-button">Home</a>
     <a href="/favorites" class="nav-button">Favorites</a>
+    <!-- The new Random button -->
+    <a href="/random" class="nav-button">Random</a>
     <a href="https://t.me/abyssinialibrary" target="_blank" rel="noopener noreferrer" class="nav-button subscribe">Subscribe</a>
   </nav>
 </header>
 
 <style>
   header {
-    position: fixed; /* Fixes the nav bar to the top */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -22,16 +23,16 @@
     z-index: 10;
     padding: 1rem 0;
   }
-
   nav {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 1rem;
     display: flex;
-    justify-content: space-between; /* Spreads the buttons out */
+    justify-content: space-between;
     align-items: center;
+    gap: 0.5rem; /* Add gap for better spacing on small screens */
+    flex-wrap: wrap; /* Allow buttons to wrap on small screens */
   }
-
   .nav-button {
     color: var(--color-text);
     background-color: var(--color-card-bg);
@@ -41,13 +42,12 @@
     text-decoration: none;
     font-weight: 500;
     transition: background-color 0.2s;
+    text-align: center;
   }
-
   .nav-button:hover {
     background-color: var(--color-border);
     text-decoration: none;
   }
-
   .nav-button.subscribe {
     background-color: var(--color-primary);
     border-color: var(--color-primary);
