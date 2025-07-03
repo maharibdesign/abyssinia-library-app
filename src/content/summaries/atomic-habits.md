@@ -5,7 +5,7 @@ title: "Atomic Habits"
 author: "James Clear"
 category: "Productivity"
 description: "An easy & proven way to build good habits & break bad ones."
-pdfUrl: "https://t.me/YOUR_CHANNEL_NAME/123"
+pdfUrl: "https://t.me/abyssinialibrary/1208"
 ---
 An atomic habit is a regular practice or routine that is not only small and easy to do but is also the source of incredible power; a component of the system of compound growth.
 
