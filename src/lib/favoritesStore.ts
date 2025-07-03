@@ -1,27 +1,26 @@
 // src/lib/favoritesStore.ts
 import { persistentMap } from '@nanostores/persistent';
 
-// This creates a "store" - a reactive object that holds our favorite IDs.
-// It's "persistent" because it automatically saves to localStorage.
-// The key 'favorites' is where it's stored in the browser.
+// The store definition remains the same.
 export const favoriteSummaries = persistentMap<Record<string, boolean>>('favorites', {});
 
-// Function to add or remove a favorite.
-// It takes the book's slug (e.g., 'atomic-habits') as an ID.
+/**
+ * Adds or removes a favorite summary.
+ * This new version uses a more robust method to ensure UI components always update.
+ */
 export function toggleFavorite(bookSlug: string) {
-  // Check if the slug is already a key in our map
-  if (favoriteSummaries.get()[bookSlug]) {
-    // If it exists, remove it.
-    // The `...favoriteSummaries.get()` part is a bit complex, but it's
-    // how we update a part of the map without erasing the rest.
-    const currentFavorites = { ...favoriteSummaries.get() };
-    delete currentFavorites[bookSlug];
-    favoriteSummaries.set(currentFavorites);
-  } else {
-    // If it doesn't exist, add it with a value of 'true'.
-    favoriteSummaries.setKey(bookSlug, true);
-  }
-}
+  // First, get a mutable copy of the current favorites object.
+  const currentFavorites = { ...favoriteSummaries.get() };
 
-// We need to install a small library to make this work.
-// We'll do that in the next step.
+  if (currentFavorites[bookSlug]) {
+    // --- The book IS currently a favorite, so we REMOVE it. ---
+    delete currentFavorites[bookSlug];
+  } else {
+    // --- The book IS NOT a favorite, so we ADD it. ---
+    currentFavorites[bookSlug] = true;
+  }
+
+  // Finally, set the entire store to our new, modified object.
+  // This guarantees that any listening components will be notified of the change.
+  favoriteSummaries.set(currentFavorites);
+}
