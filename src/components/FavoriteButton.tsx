@@ -1,23 +1,23 @@
 // src/components/FavoriteButton.tsx
-
 import { useStore } from '@nanostores/react';
 import { favoriteSummaries, toggleFavorite } from '../lib/favoritesStore';
+// IMPORT THE HAPTIC FEEDBACK FUNCTION
+import { triggerImpact } from '../lib/telegram';
 
-// This is the standard structure of a React component
 export default function FavoriteButton({ bookSlug }: { bookSlug: string }) {
-  // useStore is a React Hook. It subscribes the component to our store.
-  // When the store changes, this component will automatically re-render.
   const $favorites = useStore(favoriteSummaries);
   const isFavorite = $favorites[bookSlug];
 
-  // The handleClick function is called when the button is clicked.
   const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault(); // Prevents the link from navigating
-    e.stopPropagation(); // Stops the event from "bubbling" to the parent card
-    toggleFavorite(bookSlug); // Toggles the favorite status
+    e.preventDefault();
+    e.stopPropagation();
+    
+    // TRIGGER HAPTIC FEEDBACK
+    triggerImpact('medium');
+
+    toggleFavorite(bookSlug);
   };
 
-  // The component returns JSX (HTML-like syntax)
   return (
     <button 
       className={`favorite-btn ${isFavorite ? 'favorited' : ''}`} 
