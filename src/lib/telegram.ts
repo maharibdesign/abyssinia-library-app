@@ -1,4 +1,4 @@
-// src/lib/telegram.ts
+//   s rc/lib/telegram.ts
 export function triggerImpact(style: 'light' | 'medium' | 'heavy' | 'rigid' | 'soft') {
   if (window.Telegram?.WebApp) {
     window.Telegram.WebApp.HapticFeedback.impactOccurred(style);
