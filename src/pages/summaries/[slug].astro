@@ -4,7 +4,15 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import { getCollection } from 'astro:content';
 import FavoriteButton from '../../components/FavoriteButton.tsx'; 
 
-export async function getStaticPaths() { /* ... unchanged ... */ }
+// This function now has the correct logic to build all summary pages.
+export async function getStaticPaths() {
+  const summaryEntries = await getCollection('summaries');
+  return summaryEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 const { title, author } = entry.data;
@@ -40,12 +48,10 @@ const { slug } = entry;
     };
 
     try {
-      // Use the modern Web Share API if available
       if (navigator.share) {
         await navigator.share(shareData);
         shareButton.textContent = 'Shared!';
       } else {
-        // Fallback for desktop: copy link to clipboard
         await navigator.clipboard.writeText(window.location.href);
         shareButton.textContent = 'Link Copied!';
       }
@@ -54,7 +60,6 @@ const { slug } = entry;
       shareButton.textContent = 'Error Sharing';
     }
 
-    // Reset button text after a moment
     setTimeout(() => {
       shareButton.textContent = 'Share this Summary';
     }, 2000);
@@ -62,13 +67,27 @@ const { slug } = entry;
 </script>
 
 <style>
-  /* ... all previous styles ... */
-  .title-header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-  h1 { color: var(--color-primary); margin-bottom: 0; }
-  .author { margin-top: 0.25rem; }
-  hr { border: 0; border-top: 1px solid var(--color-border); margin: 1rem 0; }
-  .summary-content { line-height: 1.6; }
-  /* New styles for the share button */
+  .title-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 1rem; 
+  }
+  h1 { 
+    color: var(--color-primary); 
+    margin-bottom: 0; 
+  }
+  .author { 
+    margin-top: 0.25rem; 
+  }
+  hr { 
+    border: 0; 
+    border-top: 1px solid var(--color-border); 
+    margin: 1rem 0; 
+  }
+  .summary-content { 
+    line-height: 1.6; 
+  }
   .share-section {
     margin-top: 3rem;
     text-align: center;
