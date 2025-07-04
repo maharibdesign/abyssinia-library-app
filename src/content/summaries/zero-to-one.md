@@ -1,4 +1,4 @@
--- -
+---
 title: "Zero to One"
 author: "Peter Thiel"
 category: "Business"
