@@ -3,7 +3,7 @@ title: "The Body Keeps the Score"
 author: "Bessel van der Kolk"
 category: "Psychology"
 description: "Brain, mind, and body in the healing of trauma."
-pdfUrl: "https://t.me/YOUR_CHANNEL/0"
+pdfUrl: "https://t.me/abyssinialibrary/3058"
 ---
 > **Traumatized people chronically feel unsafe inside their bodies: The past is alive in the form of gnawing interior discomfort. Their bodies are constantly bombarded by visceral warning signs, and, in an attempt to control these processes, they often become expert at ignoring their gut feelings and numbing awareness of what is played out inside.**
 

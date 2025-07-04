@@ -3,7 +3,7 @@ title: "Factfulness"
 author: "Hans Rosling"
 category: "Science"
 description: "Ten reasons we're wrong about the world—and why things are better than you think."
-pdfUrl: "https://t.me/YOUR_CHANNEL/0"
+pdfUrl: "https://t.me/abyssinialibrary/3156"
 ---
 > **Factfulness is...the stress-reducing habit of only carrying opinions for which you have strong supporting facts.**
 

@@ -3,11 +3,11 @@ title: "The Almanack of Naval Ravikant"
 author: "Eric Jorgenson"
 category: "Philosophy"
 description: "A guide to wealth and happiness from a modern-day philosopher."
-pdfUrl: "https://t.me/YOUR_CHANNEL/0"
+pdfUrl: "https://t.me/abyssinialibrary/3157"
 ---
 > **Seek wealth, not money or status. Wealth is having assets that earn while you sleep. Money is how we transfer time and wealth. Status is your place in the social hierarchy.**
 
-### Key Takeaways
+### Key Takeaways O The Book
 
 -   **Specific Knowledge is Your Superpower:** Don't chase what's hot; pursue your genuine intellectual curiosity. Specific knowledge is something that can't be trained. If society can train you, it can train someone else and replace you.
 -   **Leverage is the Key to Wealth:** To get rich, you need leverage. This comes in three forms: Labor (other people working for you), Capital (money), and the newest and most powerful form, Code and Media (software and content that work for you while you sleep with zero marginal cost).
@@ -37,4 +37,4 @@ Naval's view on happiness is that it's the absence of desire. It's not about cha
 
 ---
 
-> *"The reality is, life is a single-player game. You're born alone. You're going to die alone. All of your interpretations are alone. All of your memories are alone. You're in a multiplayer game, but it's all through your own, single-player lens."
+> "The reality is, life is a single-player game. You're born alone. You're going to die alone. All of your interpretations are alone. All of your memories are alone. You're in a multiplayer game, but it's all through your own, single-player lens."

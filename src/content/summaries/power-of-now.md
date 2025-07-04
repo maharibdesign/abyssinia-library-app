@@ -3,7 +3,7 @@ title: "The Power of Now"
 author: "Eckhart Tolle"
 category: "Spirituality"
 description: "A guide to spiritual enlightenment through living in the present moment."
-pdfUrl: "https://t.me/abyssinialibrary/62"
+pdfUrl: "https://t.me/abyssinialibrary/167"
 ---
 > **Realize deeply that the present moment is all you ever have. Make the Now the primary focus of your life.**
 

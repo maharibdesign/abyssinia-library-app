@@ -3,7 +3,7 @@ title: "The Subtle Art of Not Giving a F*ck"
 author: "Mark Manson"
 category: "Self-Help"
 description: "A counterintuitive approach to living a good life."
-pdfUrl: "https://t.me/abyssinialibrary/349"
+pdfUrl: "https://t.me/abyssinialibrary/2651"
 ---
 > **The desire for more positive experience is itself a negative experience. And, paradoxically, the acceptance of one’s negative experience is itself a positive experience.**
 

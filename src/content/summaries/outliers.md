@@ -3,7 +3,7 @@ title: "Outliers: The Story of Success"
 author: "Malcolm Gladwell"
 category: "Psychology"
 description: "An examination of the factors that contribute to high levels of success."
-pdfUrl: "https://t.me/abyssinialibrary/2509"
+pdfUrl: "https://t.me/abyssinialibrary/2625"
 ---
 > **It is not the brightest who succeed... nor is success simply the sum of the decisions and efforts we make on our own behalf. It is, rather, a gift. Outliers are those who have been given opportunities—and who have had the strength and presence of mind to seize them.**
 

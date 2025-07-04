@@ -3,7 +3,7 @@ title: "Daring Greatly"
 author: "Brené Brown"
 category: "Self-Help"
 description: "How the courage to be vulnerable transforms the way we live, love, and lead."
-pdfUrl: "https://t.me/YOUR_CHANNEL/0"
+pdfUrl: "https://t.me/abyssinialibrary/3155"
 ---
 > **Vulnerability is not winning or losing; it's having the courage to show up and be seen when we have no control over the outcome. Vulnerability is not weakness; it's our greatest measure of courage.**
 
